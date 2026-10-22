@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Public Transport Dashboard</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            margin: 20px;
+        }
+
+        h1 {
+            background: navy;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid gray;
+            text-align: center;
+        }
+
+        th {
+            background: lightblue;
+        }
+
+        .alert {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Public Transport Monitoring Dashboard</h1>
+
+    <h2>Bus Route Information</h2>
+
+    <table>
+        <tr>
+            <th>Route</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Arrival</th>
+            <th>Crowd</th>
+            <th>Status</th>
+        </tr>
+
+        <tr>
+            <td>101</td>
+            <td>Central</td>
+            <td>Hospital</td>
+            <td>5 min</td>
+            <td>Low</td>
+            <td>On Time</td>
+        </tr>
+
+        <tr>
+            <td>205</td>
+            <td>College</td>
+            <td>Airport</td>
+            <td>15 min</td>
+            <td>Moderate</td>
+            <td>Delayed</td>
+        </tr>
+
+        <tr>
+            <td>310</td>
+            <td>Market</td>
+            <td>Bus Stand</td>
+            <td>20 min</td>
+            <td>High</td>
+            <td class="alert">Diversion</td>
+        </tr>
+    </table>
+
+    <h2>Service Disruptions</h2>
+    <p>Route 205 is delayed due to traffic.</p>
+    <p>Route 310 has a temporary road diversion.</p>
+
+    <h2>Passenger Advisory</h2>
+    <p>Please check bus timings before travelling.
+       Allow extra time during delays.</p>
+
+</body>
+</html>
