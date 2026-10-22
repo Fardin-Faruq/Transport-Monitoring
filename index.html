@@ -1,50 +1,21 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Public Transport Dashboard</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f2f2f2;
-            margin: 20px;
-        }
-
-        h1 {
-            background: navy;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            background: white;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 12px;
-            border: 1px solid gray;
-            text-align: center;
-        }
-
-        th {
-            background: lightblue;
-        }
-
-        .alert {
-            color: red;
-        }
-    </style>
 </head>
 <body>
 
     <h1>Public Transport Monitoring Dashboard</h1>
 
-    <h2>Bus Route Information</h2>
+    <h2>Search Bus Route</h2>
 
-    <table>
+    <input type="text" id="route" placeholder="Enter route number">
+    <button onclick="searchRoute()">Search</button>
+    <button onclick="showAll()">Show All</button>
+
+    <h2>Bus Route Details</h2>
+
+    <table border="1" cellpadding="10">
         <tr>
             <th>Route</th>
             <th>From</th>
@@ -58,7 +29,7 @@
             <td>101</td>
             <td>Central</td>
             <td>Hospital</td>
-            <td>5 min</td>
+            <td>5 minutes</td>
             <td>Low</td>
             <td>On Time</td>
         </tr>
@@ -67,8 +38,8 @@
             <td>205</td>
             <td>College</td>
             <td>Airport</td>
-            <td>15 min</td>
-            <td>Moderate</td>
+            <td>15 minutes</td>
+            <td>Medium</td>
             <td>Delayed</td>
         </tr>
 
@@ -76,19 +47,39 @@
             <td>310</td>
             <td>Market</td>
             <td>Bus Stand</td>
-            <td>20 min</td>
+            <td>20 minutes</td>
             <td>High</td>
-            <td class="alert">Diversion</td>
+            <td>Diverted</td>
         </tr>
     </table>
 
     <h2>Service Disruptions</h2>
     <p>Route 205 is delayed due to traffic.</p>
-    <p>Route 310 has a temporary road diversion.</p>
+    <p>Route 310 has a road diversion.</p>
 
     <h2>Passenger Advisory</h2>
-    <p>Please check bus timings before travelling.
-       Allow extra time during delays.</p>
+    <p>Please check bus timings and allow extra travel time.</p>
+
+    <script>
+        function searchRoute() {
+            let route = document.getElementById("route").value;
+            let rows = document.querySelectorAll("table tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                rows[i].style.display =
+                    rows[i].cells[0].innerText.includes(route)
+                    ? "" : "none";
+            }
+        }
+
+        function showAll() {
+            let rows = document.querySelectorAll("table tr");
+
+            for (let i = 0; i < rows.length; i++) {
+                rows[i].style.display = "";
+            }
+        }
+    </script>
 
 </body>
 </html>
